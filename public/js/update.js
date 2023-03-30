@@ -4,10 +4,10 @@ const updateFormHandler = async (event) => {
     console.log("Update Form submitted");
 
     const formName = document.querySelector('#project-name').value.trim();
-    const instructions = document.querySelector('#project-desc').value.trim();
+    const instructions = document.querySelector('#inputInstructionsTextArea').value.trim();
     
 
-    const textId = event.target.dataset.id;
+    const textId = event.target.dataset.textId;
     const input = JSON.stringify({ formName, instructions })
 
     console.log(input)
