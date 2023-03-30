@@ -1,16 +1,14 @@
 <form class="update-form m-5" data-id={{id}}>
     <div>
-        <div class="card text-center m-5 border-0">
-            <div class="card-body">
+        <div class="text-center">
+            <div>
                 <h5 class="headers m-3">Title:</h5>
-                <textarea class="card-title text-center rounded w-75" rows="1" type="text" id="project-name">{{formName}}</textarea>
+                <textarea class="text-center rounded w-75" rows="1" type="text" id="project-name">{{formName}}</textarea>
+            </div>              
+            <div>
+                <h5 class="headers m-3">Content:</h5>
+                <textarea class="text-center rounded w-75" type="text" rows="10" id="inputInstructionsTextArea">{{instructions}}</textarea>
             </div>
-            <ul class="text-center row">              
-                <div class="col">
-                    <h5 class="headers">Content:</h5>
-                    <textarea class="form-control text-center rounded" rows="7" id="inputInstructionsTextArea">{{instructions}}</textarea>
-                </div>
-            </ul>
         </div>
     </div> 
     <div class="text-center">

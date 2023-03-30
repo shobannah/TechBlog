@@ -7,20 +7,20 @@ const updateFormHandler = async (event) => {
     const instructions = document.querySelector('#project-desc').value.trim();
     
 
-    const textId = event.target.dataset.textId;
-    const text = JSON.stringify({ formName, instructions })
+    const textId = event.target.dataset.id;
+    const input = JSON.stringify({ formName, instructions })
 
-    console.log(text)
+    console.log(input)
 
     if (formName && instructions) {
-        const response = await fetch(`/api/projects/${textId}`, {
+        const response = await fetch(`/api/project/${textId}`, {
         method: 'PUT',
-        body: text,
+        body: input,
         headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-        document.location.replace(`/api/projects/${textId}`);
+        document.location.replace(`/api/project/${textId}`);
         } else {
             console.log(response);
             alert(response.statusText);
