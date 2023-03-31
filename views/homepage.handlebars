@@ -4,13 +4,16 @@
   <div>
     <h2>
       <a href="/project/{{project.id}}">{{project.name}}</a>
+      <h2>Why is MVC so important?</h2>
     </h2>
     <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+    <p>Created by Sal on 3/31/2023</p>
   </div>
   <div>
     <p>
-      {{project.description}}
+      {{project.description}}  
     </p>
+    <p>MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the Vew layer for design, and the Controller layer for application login.</p>
   </div>
 </div>
 {{/each}}
