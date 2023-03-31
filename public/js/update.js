@@ -3,8 +3,8 @@ const updateFormHandler = async (event) => {
 
     console.log("Update Form submitted");
 
-    const formName = document.querySelector('textarea[name="project.title"]').value;
-    const instructions = document.querySelector('textarea[name="project.description"]').value;
+    const formName = document.querySelector('#project-name').value.trim();
+    const instructions = document.querySelector('#inputInstructionsTextArea').value.trim();
     
 
     const textId = event.target.getAttribute('data-id');
