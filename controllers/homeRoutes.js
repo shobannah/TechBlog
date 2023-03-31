@@ -79,6 +79,29 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get("/project/:id/edit", withAuth, async (req, res) => {
+  const textData = await Project.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+  const input = textData.get({ plain: true });
+
+  console.log(input);
+
+  let idInt = input.id
+
+  res.render('update', {
+    id: idInt.toString(),
+    formName: input.formName,
+    instructions: input.instructions,
+    logged_in: req.session.logged_in
+  })
+})
 
 
 module.exports = router;
