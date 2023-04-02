@@ -13,4 +13,4 @@ This is a CMS-style blog site similar to a Wordpress site, where developers can 
 
 ## Link to Deployed Application
 
-<a href=https://techblogchallenge-app.herokuapp.com> Note Taker
+<a href=https://techblogchallenge-app.herokuapp.com> Tech Blog
