@@ -13,4 +13,4 @@ This is a CMS-style blog site similar to a Wordpress site, where developers can 
 
 ## Link
 
-<a href= https://techblogchallenge-app.herokuapp.com/> 
+https://techblogchallenge-app.herokuapp.com/  
