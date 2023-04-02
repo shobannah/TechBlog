@@ -2,7 +2,29 @@ const router = require('express').Router();
 const { Project } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
+  try {
+    const projects = await Project.getAll({
+    });
+
+    res.status(200).json(projects);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const project = await Project.findByPk(req.params.id,);
+
+    res.status(200).json(project);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+
+router.post('/', async (req, res) => {
   try {
     const newProject = await Project.create({
       ...req.body,
@@ -15,6 +37,26 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.put('/:id', async (req, res) => {
+  try {
+    const newProject = await Project.update(
+      {
+        name: req.body.formName,
+        description: req.body.instructions
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+  
+    );
+
+    res.status(200).json(newProject);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 
 router.delete('/:id', withAuth, async (req, res) => {

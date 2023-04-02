@@ -11,16 +11,17 @@ const updateFormHandler = async (event) => {
     const input = JSON.stringify({ formName, instructions })
 
     console.log(input)
+    console.log(textId)
 
     if (formName && instructions) {
-        const response = await fetch(`/api/project/${textId}`, {
+        const response = await fetch(`/api/projects/${textId}`, {
         method: 'PUT',
         body: input,
         headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-        document.location.replace(`/api/project/${textId}`);
+        document.location.replace(`/project/${textId}`);
         } else {
             console.log(response);
             alert(response.statusText);
